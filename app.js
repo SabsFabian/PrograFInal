@@ -1,7 +1,7 @@
 //Funcion para obtener lista de tareas
 function obtenerListaTareas(){
-    var todos = new Array;
-    
+    //var todos = new Array;
+    var todos = [];
     //Trae la lista de todos que esta en memoria
     var todos_str = localStorage.getItem('todo');
 
@@ -16,15 +16,21 @@ function agregar(){
     //Aqui obtemos lo que escribe el usuairo
     var task = document.getElementById('task').value;
 
-    var todos = obtenerListaTareas();
+    if(task === ""){
+        alert("Debes ingresar una tarea!")
+    } else {
+        var todos = obtenerListaTareas();
 
-    //Graba la tarea en el array
-    todos.push(task);
-    //Almacena en memoria
-    localStorage.setItem('todo', JSON.stringify(todos));
+        //Graba la tarea en el array
+        todos.push(task);
+        //Almacena en memoria
+        localStorage.setItem('todo', JSON.stringify(todos));
+    
+        mostrar();
+        clearDefault();
+    }
 
-    mostrar();
-    clearDefault();
+    
     return false; //avoids any futher action with click event
 }
 
