@@ -69,7 +69,7 @@ function mostrar(){
         buttons[i].addEventListener('click', eliminar);
     };
 }
-
-document.getElementById('add').addEventListener('click', add);
+//Se le asigna el mostrar al boton añadir
+document.getElementById('add').addEventListener('click', agregar);
 
 mostrar();
